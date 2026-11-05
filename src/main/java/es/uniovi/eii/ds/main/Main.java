@@ -1,6 +1,7 @@
 package es.uniovi.eii.ds.main;
 
 import es.uniovi.eii.ds.filesystem.FileSystem;
+import es.uniovi.eii.ds.filesystem.output.*;
 
 public class Main {
 	
@@ -8,9 +9,9 @@ public class Main {
 		
 		FileSystem system = new FileSystem();
 
-		system.copyFile("private.txt", "copy.txt");
-		system.sendToInternet("private.txt", "156.35.233.143");
-		system.sendWithBluetooth("private.txt", "César's iPhone");
+		system.copy("private.txt", new Disk("copy.txt"));
+		system.copy("private.txt", new Internet("156.35.233.143"));
+		system.copy("private.txt", new Bluetooth("César's iPhone"));
 
 		//-- Initial redesign --------------------------------
 
